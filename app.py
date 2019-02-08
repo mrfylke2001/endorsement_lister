@@ -32,16 +32,16 @@ for i in range(len(nArray)):
             unendorsed.append(nArray[i])
     time.sleep(0.7)
 
-results = "<!DOCTYPE html><html><body><p>You have not endorsed:</p><ul>"
+results = "<!DOCTYPE html><html><body><p>You have not endorsed:</p><ol>"
 
 for x in unendorsed:
     results += f"<li><a href='https://nationstates.net/nation={x}' target='_blank'>{x}</a></li>"
-results += "</ul><p>You have not been endorsed by:</p><ul>"
+results += "</ol><p>You have not been endorsed by:</p><ol>"
 
 for x in nationsWA:
     if x not in userEndoArray:
         results += f"<li><a href='https://nationstates.net/nation={x}' target='_blank'>{x}</a></li>"
-results += "</ul></body></html>"
+results += "</ol></body></html>"
 
 with open("results.html", "w") as file:
     file.write(results)
